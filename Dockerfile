@@ -2,7 +2,7 @@
 FROM public.ecr.aws/docker/library/golang:1.19 as build
 
 WORKDIR /go/src/app
-COPY otelcol-builder.yaml .
+COPY zinclabs-otel-collector-builder.yaml .
 
 RUN GO111MODULE=on go install go.opentelemetry.io/collector/cmd/builder@latest
 RUN builder --config=zinclabs-otel-collector-builder.yaml --name="zinclabs-otel-collector" --version="0.0.1" --output-path=/go/bin/app
