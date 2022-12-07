@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      # install buildx
+      - wget -nv https://github.com/docker/buildx/releases/download/v0.9.1/buildx-v0.9.1.linux-amd64
+      - chmod +x buildx-v0.9.1.linux-amd64
+      - mkdir -p ~/.docker/cli-plugins
+      - mv buildx-v0.9.1.linux-amd64 ~/.docker/cli-plugins/docker-buildx
+  pre_build:
+    commands:
+      # - echo Logging in to Amazon ECR...
+      - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/zinclabs
+      - export DOCKER_CLI_EXPERIMENTAL=enabled
+  build:
+    commands:
+      - GIT_HASH="$(git rev-parse --short HEAD)"
+      - GIT_TAG="$(git describe --tags --abbrev=0)"
+      - docker buildx create --name mybuilder --use --bootstrap
+      - docker buildx build --push --platform linux/amd64,linux/arm64 --tag public.ecr.aws/zinclabs/zinclabs-otel-collector:$GIT_TAG-$GIT_HASH .
+
+  

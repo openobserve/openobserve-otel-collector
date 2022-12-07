@@ -1,0 +1,46 @@
+exporters:
+  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/exporter/jaegerexporter v0.66.0
+  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/exporter/jaegerthrifthttpexporter v0.66.0
+  # - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/exporter/prometheusremotewriteexporter v0.66.0 causing build failure
+  # - gomod: go.opentelemetry.io/collector/exporter/loggingexporter v0.66.0
+
+receivers:
+  - gomod: go.opentelemetry.io/collector/receiver/otlpreceiver v0.66.0
+
+extensions:
+  - gomod: go.opentelemetry.io/collector/extension/zpagesextension v0.66.0
+  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/extension/basicauthextension v0.66.0
+
+
+processors:
+  - gomod: go.opentelemetry.io/collector/processor/batchprocessor v0.66.0
+
+distribution:
+  name: otelcol-zinclabs
+  output_path: /tmp/dist
+  description: "OpenTelemetry Zinclabs distribution"
+  version: 0.0.1
+  maintainer: "Prabhat Sharma <prabhat@zinclabs.io>"
+  homepage: "https://zincsearch.com"
+  default_config: |
+    receivers:
+      otlp:
+        protocols:
+          http:
+            endpoint: localhost:4317
+
+    processors:
+      batch:
+
+    exporters:
+      logging:
+
+    service:
+      pipelines:
+        traces:
+          receivers:
+            - otlp
+          processors:
+            - batch
+          exporters:
+            - logging
