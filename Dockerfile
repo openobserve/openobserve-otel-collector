@@ -1,5 +1,5 @@
 # Start by building the application.
-FROM golang:1.19 as build
+FROM public.ecr.aws/docker/library/golang:1.19 as build
 
 WORKDIR /go/src/app
 COPY otelcol-builder.yaml .
