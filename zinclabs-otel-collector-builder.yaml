@@ -6,16 +6,16 @@ exporters:
 
 receivers:
   - gomod: go.opentelemetry.io/collector/receiver/otlpreceiver v0.74.0
-  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/receiver/filelogreceiver v0.74.0
-  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/receiver/prometheus v0.74.0
+  - gomod: go.opentelemetry.io/collector/receiver/filelogreceiver v0.74.0
+  - gomod: go.opentelemetry.io/collector/receiver/prometheus v0.74.0
   - gomod: go.opentelemetry.io/collector/receiver/hostmetrics v0.74.0
-  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/receiver/awsfirehosereceiver v0.74.0
-  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/receiver/awscloudwatchreceiver v0.74.0
-  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/receiver/journaldreceiver v0.74.0
-  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/receiver/k8sclusterreceiver v0.74.0
-  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/receiver/k8seventsreceiver v0.74.0
-  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/receiver/kubeletstatsreceiver v0.74.0
-  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/receiver/syslogreceiver v0.74.0
+  - gomod: go.opentelemetry.io/collector/receiver/awsfirehosereceiver v0.74.0
+  - gomod: go.opentelemetry.io/collector/receiver/awscloudwatchreceiver v0.74.0
+  - gomod: go.opentelemetry.io/collector/receiver/journaldreceiver v0.74.0
+  - gomod: go.opentelemetry.io/collector/receiver/k8sclusterreceiver v0.74.0
+  - gomod: go.opentelemetry.io/collector/receiver/k8seventsreceiver v0.74.0
+  - gomod: go.opentelemetry.io/collector/receiver/kubeletstatsreceiver v0.74.0
+  - gomod: go.opentelemetry.io/collector/receiver/syslogreceiver v0.74.0
   
 
 extensions:
