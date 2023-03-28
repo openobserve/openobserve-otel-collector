@@ -1,6 +1,6 @@
 exporters:
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/exporter/otlphttpexporter v0.74.0
-  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/exporter/elasticsearch v0.74.0
+  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/exporter/elasticsearchexporter v0.74.0
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/exporter/prometheusremotewrite v0.74.0
 
 receivers:
