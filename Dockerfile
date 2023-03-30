@@ -3,7 +3,7 @@ FROM --platform=$BUILDPLATFORM public.ecr.aws/docker/library/golang:1.19 as buil
 ARG TARGETOS TARGETARCH
 
 WORKDIR /go/src/app
-COPY zinclabs-otel-collector-builder.yaml .
+COPY manifest.yaml.yaml .
 ENV CGO_ENABLED=0 
 
 RUN GO111MODULE=on go install go.opentelemetry.io/collector/cmd/builder@latest
