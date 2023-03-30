@@ -12,5 +12,5 @@ RUN GOOS=$TARGETOS GOARCH=$TARGETARCH builder --config=zinclabs-otel-collector-b
 # Now copy it into our base image.
 FROM gcr.io/distroless/static-debian11
 COPY --from=build /go/bin/app /
-CMD ["/zinclabs-otel-collector"]
-
+CMD ["/zinclabs-otel-collector", "--config", "/etc/otelcol/config.yaml"]
+EXPOSE 4317 55678 55679
