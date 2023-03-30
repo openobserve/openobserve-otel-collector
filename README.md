@@ -1,5 +1,7 @@
 # zinclabs-otel-collector
 
+Added more collectors
+
 1. exporters
     1. jaegerexporter
     1. jaegerthrifthttpexporter
