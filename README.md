@@ -1,20 +1,9 @@
 # zinclabs-otel-collector
 
-Added more collectors
+This is the Zinc Labs otel-collector distribution that allows capturing logs, metrics and traces from most common sources.
 
-1. exporters
-    1. jaegerexporter
-    1. jaegerthrifthttpexporter
-    1. otlphttpexporter
-1. receivers
-    1. otlp
-1. processors
-    1. batch
-    1. memorylimiterprocessor
-1. extensions
-    1. basicauthextension
-    1. healthcheckextension
-    1. ballastextension
-    1. zpagesextension
+It allows you to captures both logs and metrics from multiple sources and allows to process and route logs, metrics and traces.
 
+Check [manifest file](manifest.yaml) for all available components.
 
+Docker images are available at: https://gallery.ecr.aws/zinclabs/zinclabs-otel-collector
