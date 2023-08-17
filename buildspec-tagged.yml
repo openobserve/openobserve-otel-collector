@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       # install buildx
-      - BUILDX_VERSION=v0.10.4
+      - BUILDX_VERSION=v0.11.2
       - wget -nv https://github.com/docker/buildx/releases/download/$BUILDX_VERSION/buildx-$BUILDX_VERSION.linux-amd64
       - chmod +x buildx-$BUILDX_VERSION.linux-amd64
       - mkdir -p ~/.docker/cli-plugins

@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM --platform=$BUILDPLATFORM public.ecr.aws/docker/library/golang:1.19 as build
+FROM --platform=$BUILDPLATFORM public.ecr.aws/docker/library/golang:1.20 as build
 ARG TARGETOS TARGETARCH
 
 WORKDIR /go/src/app
